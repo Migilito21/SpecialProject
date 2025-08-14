@@ -1,0 +1,182 @@
+body{
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, #f4bebe, rgb(250, 153, 169), rgb(240, 127, 127));
+}
+.h1_Class{
+  position: relative;
+  margin: 0 auto 20px;
+  padding-bottom: 1px;
+  text-align: center;
+  background-color: #ee4a4a;
+  width: 90vh;
+}
+.h1_Class::before, .h1_Class::after{
+    content: '';
+  width: 80px;
+  height: 100%;
+  background-color: #d03c2f;
+
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
+
+  background-image: linear-gradient(45deg, transparent 50%, #5d3922 50%);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.h1_Class::before{
+  left: -60px;
+
+}
+.h1_Class::after{
+ right: -60px;
+  transform: scaleX(-1);
+}
+
+.h1_Child{
+    font-size: 5vh;
+    margin-bottom: 0;
+}
+.h2_Child{
+    font-size: 5vh;
+    margin-top: 0;
+}
+.row{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+.row img{
+    border: 10px solid red;
+    margin: 10vh ;
+    margin-right: 10px;
+    max-width: 20%;
+    height: auto;
+}
+.reverse img{
+    border: 10px solid red;
+    margin: 10vh ;
+    max-width: 20%;
+    height: auto;
+}
+.row.reverse{
+    flex-direction: row-reverse;
+}
+#firstDate{
+    font-size: 50px;
+    margin-top: 0;
+    white-space: nowrap;
+}
+#secondDate{
+    font-size: 50px;
+    white-space: nowrap;
+    text-align: right;
+}
+#dateNotes{
+    font-size: 60px;
+}
+#secondDateNotes{
+    display: block;
+    font-size: 60px;
+    margin: 0;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.endingMessage{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#h2_endingMessage{
+    font-size: 4vh;
+    font-style: italic;
+}
+.hearts{
+    font-size: 23px;
+    font-weight: bold;
+    position: fixed;
+    top: -1vh;
+    transform: translateY(0%);
+    left: 0;
+    animation: fall 3s ease-in infinite;
+}
+@keyframes fall {
+    to{
+        transform: translateY(250vh);
+    }
+}
+#playButton{
+    position: fixed;
+    right: 20px;
+    background-color: rgb(245, 67, 97);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 9vh;
+    height: 9vh;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(to bottom, #f4bebe, rgb(250, 153, 169), rgb(240, 127, 127));
+    padding: 10px;
+  }
+
+  .h1_Class {
+    width: 70%;
+    font-size: 3vh;
+  }
+
+  .h1_Child, .h2_Child {
+    font-size: 3.5vh;
+  }
+
+  .row {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .row.reverse{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row img, 
+  .reverse img {
+    margin: 2vh 0;
+    max-width: 80%; 
+  }
+
+  #firstDate, 
+  #secondDate {
+    font-size: 4vh;
+    white-space: normal; 
+    text-align: center;
+  }
+
+  #dateNotes,
+  #secondDateNotes {
+    font-size: 3vh;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  #playButton {
+    width: 7vh;
+    height: 7vh;
+    font-size: 20px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
